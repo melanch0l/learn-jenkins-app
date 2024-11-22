@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh '
-                docker --version'
+                sh 'gidocker --version'
             }
         }
     }

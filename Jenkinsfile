@@ -2,10 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
-            steps {
-                sh 'docker --version'
+        stage('Build') {
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
             }
+            
         }
     }
 }
